@@ -92,3 +92,5 @@ dt[n,5:6] = cleanDat[n,72:73]
 dt[n,7:ncol(dt)] = makeBinary(as.numeric(cleanDat[n,5:71]), maxQS)
 
 }
+
+write.table(dt, file="binary-ling-data.data", row.names=F)

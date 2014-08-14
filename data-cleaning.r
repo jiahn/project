@@ -47,7 +47,7 @@ hist(omitvals, xlab = "questions ommited", main = "Number Ommited Questions")
 
 newRowOmits = rowOmits[-which(rowOmits == 67)]
 
-non.response.cutoff = quantile(newRowOmits, 0.995)
+non.response.cutoff = quantile(newRowOmits, 0.99)
 non.response.cutoff = as.numeric(non.response.cutoff)
 
 newRowCuts = which(newRowOmits > non.response.cutoff) + 1
@@ -58,3 +58,5 @@ cleanedData = noOmitLingData[-newRowCuts,]
 # "ling-data-clean.data" 
 
 write.table(cleanedData, file="ling-data-clean.data", row.names=F)
+write.table(cleanedData, file="ling-data-clean2.data", row.names=F)
+write.table(cleanedData, file="ling-data-clean3.data", row.names=F)
